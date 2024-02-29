@@ -18,7 +18,6 @@ async def get_pdf_data(pdf_file: UploadFile = File(...)):
 
     # Extract data from the PDF file
     extracted_data = extract_data_from_pdf(pdf_path)
-    print(extracted_data)
     # Optionally, you can delete the temporary file after processing
     os.remove(pdf_path)
 
