@@ -31,8 +31,4 @@ def extract_data_from_pdf(pdf_path):
                 extracted_amount= filtered_lines[i][first_space_index:second_space_index].strip()
                 extracted_data['bill amount'] = extracted_amount
             i+=1
-        # Print the extracted data
-        print(f"File: {pdf_path}")
-        for key, value in extracted_data.items():
-            print(f"{key}: {value}")
-        print("\n")
+        return extracted_data
