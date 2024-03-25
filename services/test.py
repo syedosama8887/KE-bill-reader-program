@@ -41,7 +41,7 @@ def extract_info(text):
     return name, formatted_due_date, formatted_amount
 
 # Example usage
-pdf_path = "0400000035201_420016942522.pdf"
+pdf_path = "pdffiles/0400034237962_712014486568.pdf"
 df = extract_data_from_pdf(pdf_path)
 print(df)
 
