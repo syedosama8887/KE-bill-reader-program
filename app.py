@@ -8,6 +8,7 @@ app = FastAPI()
 
 @app.post('/getpdfdata')
 async def get_pdf_data(pdf_file: UploadFile = File(...)):
+    pdf_path = None
     try:
         # Check if the uploaded file has a .pdf extension
         if not pdf_file.filename.lower().endswith(".pdf"):
@@ -25,8 +26,8 @@ async def get_pdf_data(pdf_file: UploadFile = File(...)):
         print(e)
     finally:
         
-        # Optionally, you can delete the temporary file after processing
-        os.remove(pdf_path)
+        if pdf_path is not None and os.path.exists(pdf_path):
+            os.remove(pdf_path)
 
 if __name__ == "__main__":
     import uvicorn
